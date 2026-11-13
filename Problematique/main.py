@@ -107,7 +107,7 @@ def genereBinString(imgs):
 #   - encoded : binstring de l'image encodé 
 def encode(methode, data):
     if methode == "rlc":
-        rlc.encode(data)
+        data["encoded"] = rlc.encode(data)
     elif methode == "huffman":
         huffman.encode(data)
     elif methode == "arithmetique":
