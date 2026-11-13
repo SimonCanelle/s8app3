@@ -67,6 +67,7 @@ def analyseStatistiqueImage(image:list[int]):
     
 # analyse les statistique de données encodées et les packages dans un dictionnaire
 def analyseStatistiqueEncode(encData):
+    #TODO coder l'analyse statistique des données encodées
     pass
 
 
@@ -77,6 +78,13 @@ def calculeEntropie(statsDict):
         entropie += prob * np.log2(prob)
     entropie *= -1
     return entropie
+
+# génère les métadonnées et construit la binary string à enregistrer 
+def genereBinString(imgs):
+    #TODO faire le calcul des métadonnées pour les 4 images ensemble
+    #[nombre d'image:8b, taille des données image 1: 32b, taille des données image x: 32b ...]
+    #TODO concaténer les metadonnées aux binary strings de chaque images
+    return "00000000"
 
 # encode les données en une binary string (inclu les métadonnées)
 # data est un dictionnaire contenant:
@@ -101,30 +109,31 @@ def encode(methode, data):
     else:
         raise("type d'encodage non supporté")
 
-# génère les métadonnées et construit la binary string à enregistrer 
-def genereBinString(imgs):
-    return "00000000"
-
 #retourne un tableau de données 
 def decode(methode, data):
     if methode == "rlc":
-        rlc.decode(data)
+        decoded = rlc.decode(data)
     elif methode == "huffman":
-        huffman.decode(data)
+        decoded = huffman.decode(data)
     elif methode == "arithmetique":
-        arithmetique.decode(data)
+        decoded = arithmetique.decode(data)
     else:
         raise("type d'encodage non supporté")
-
+    
+    return decoded
 
 # compare les statistique des images sources avec 
 def calculDebitBinaire(srcImgs, encImgs):
+    #TODO faire le calcul du débit binaire
     pass
 
 # compare une image source avec sa version décodé
 # retourne vrai si elle sont identique (ce qu'on veut avec lossless comp)
-def verificationCodage(srcImg, decImg):
-    pass
+def verificationCodage(srcImg, decImg):    
+    for i in range(len(srcImg)):
+        if (srcImg[i]["image"] != decImg[i]):#TODO revérifier la comparaison après avoir fini les décodage 
+            return False
+    return True
 
 
 if __name__ == "__main__":
