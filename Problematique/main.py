@@ -9,6 +9,9 @@ import os
 import cv2 as cv
 import numpy as np
 import copy
+import huffman
+import rlc
+import arithmetique
 RESSOURCE_PATH = "Problematique\\ressources"
 
 
@@ -90,11 +93,11 @@ def calculeEntropie(statsDict):
 #           - 2 : liste des probabilité des symboles
 def encode(methode, data):
     if methode == "rlc":
-        pass
+        rlc.encode(data)
     elif methode == "huffman":
-        pass
+        huffman.encode(data)
     elif methode == "arithmetique":
-        pass
+        arithmetique.encode(data)
     else:
         raise("type d'encodage non supporté")
 
@@ -105,14 +108,14 @@ def genereBinString(imgs):
 #retourne un tableau de données 
 def decode(methode, data):
     if methode == "rlc":
-        pass
+        rlc.decode(data)
     elif methode == "huffman":
-        pass
+        huffman.decode(data)
     elif methode == "arithmetique":
-        pass
+        arithmetique.decode(data)
     else:
         raise("type d'encodage non supporté")
-    
+
 
 # compare les statistique des images sources avec 
 def calculDebitBinaire(srcImgs, encImgs):
@@ -122,6 +125,7 @@ def calculDebitBinaire(srcImgs, encImgs):
 # retourne vrai si elle sont identique (ce qu'on veut avec lossless comp)
 def verificationCodage(srcImg, decImg):
     pass
+
 
 if __name__ == "__main__":
     #1. lecture des images
