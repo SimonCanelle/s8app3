@@ -10,40 +10,47 @@ import cv2 as cv
 
 RESSOURCE_PATH = "./ressources"
 
+
 # lis un fichier dans le dossier de ressources du nom <nomFichier> et renvoie les données
 def lectureFichier(nomFichier, type):#ajouter arg type pour fichier txt vs image?
     FP = os.path.join(RESSOURCE_PATH, nomFichier)
-    
+    #lecture d'image
     if (type == "img"):
         data = cv.imread(FP)
-
+    #lecture de texte
     elif (type == "txt"):
         with open(FP, "r") as f:
             data = f.read()
-
+    #type non supporté
     else:
         raise("File type not supported")
 
     return data
 
 
-# enregistre les données dans un fichier du nom donné
+# enregistre une binary string dans un fichier texte du nom donné
 def enregistreFichier(binString, nomFichier):
-    pass
+    FP = os.path.join(RESSOURCE_PATH, nomFichier)
+    with open(FP, "w+") as f:
+        f.write(binString)
 
+    
 # analyse les statistique d'une images et les packages dans un dictionnaire
 def analyseStatistiqueImage(image):
     pass
+
 
 # analyse les statistique de données encodées et les packages dans un dictionnaire
 def analyseStatistiqueEncode(encData):
     pass
 
+
 # calcule l'entropie d'une série de symbole
 def calculeEntropie(data, stats):
     pass
 
-# encode les données en une binary string
+
+# encode les données en une binary string (inclu les métadonnées)
 def encode(methode, data, stats):
     if methode == "rlc":
         pass
@@ -53,6 +60,7 @@ def encode(methode, data, stats):
         pass
     else:
         raise("type d'encodage non supporté")
+
 
 #retourne un tableau de données 
 def decode(methode, data):
