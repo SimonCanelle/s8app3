@@ -51,30 +51,29 @@ def analyseStatistiqueImage(image:list[int]):
     statDict["moyenne"] = np.mean(image)
     statDict["ecart-type"] = np.std(image)
     
-    symboleStats = np.unique(image, return_counts=True)
-    #conversion de tuple a liste pour futur calculs
-    symboleStats = [symboleStats[0], symboleStats[1], np.zeros(symboleStats[0].size)]
+    symboleStats = np.unique(image, return_counts=True) #retourne les symboles unique et leurs compte    
+    symboleStats = [symboleStats[0], symboleStats[1], np.zeros(symboleStats[0].size)] #conversion de tuple a liste pour futur calculs
     nPixel = len(image) * len(image[0])
     for i, car in enumerate(symboleStats[0]): 
-         symboleStats[2][i] = symboleStats[1][i]/nPixel    
-    
+         symboleStats[2][i] = symboleStats[1][i]/nPixel      
+
     statDict["symboles"] = symboleStats #symbole[0] : caractère, symbole[1] : occurences, symbole[2]: propabilité
     
     return statDict
 
     
-
-
-
 # analyse les statistique de données encodées et les packages dans un dictionnaire
 def analyseStatistiqueEncode(encData):
     pass
 
 
 # calcule l'entropie d'une série de symbole
-def calculeEntropie(data, stats):
-    pass
-
+def calculeEntropie(statsDict):
+    entropie = 0
+    for prob in statsDict["symboles"][2]:
+        entropie += prob * np.log2(prob)
+    entropie *= -1
+    return entropie
 
 # encode les données en une binary string (inclu les métadonnées)
 def encode(methode, data, stats):
@@ -117,11 +116,13 @@ if __name__ == "__main__":
     img3 = lectureFichier("source3.jpg", "img")
     imgs = [{"image":img0}, {"image":img1}, {"image":img2}, {"image":img3}]
 
-    #2. analyse statistiques
     for img in imgs:
+        #2. analyse statistiques
         img["statistiques"] = analyseStatistiqueImage(img["image"])
+        #3. calculs d'entropie
+        img["entropie"] = calculeEntropie(img["statistiques"])
+    
 
-    #3. calculs d'entropie
     #4. encodage avec les 3 méthodes
     #5. enregistrement des données d'encodage
     #6. lecture des fichiers encodé
