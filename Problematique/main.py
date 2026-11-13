@@ -9,11 +9,13 @@ import os
 import cv2 as cv
 import numpy as np
 import copy
+
+#import des fichiers d'encodages
 import huffman
 import rlc
 import arithmetique
-RESSOURCE_PATH = "Problematique\\ressources"
 
+RESSOURCE_PATH = "Problematique\\ressources"
 
 # lis un fichier dans le dossier de ressources du nom <nomFichier> et renvoie les données
 def lectureFichier(nomFichier, type):#ajouter arg type pour fichier txt vs image?
@@ -42,7 +44,7 @@ def lectureFichier(nomFichier, type):#ajouter arg type pour fichier txt vs image
 # enregistre une binary string dans un fichier texte du nom donné
 def enregistreFichier(binString, nomFichier):
     FP = os.path.join(RESSOURCE_PATH, nomFichier)
-    with open(FP, "w") as f:
+    with open(FP, "w+") as f:
         f.write(binString)
 
     
@@ -81,14 +83,17 @@ def calculeEntropie(statsDict):
 
 # génère les métadonnées et construit la binary string à enregistrer 
 def genereBinString(imgs):
-    #TODO faire le calcul des métadonnées pour les 4 images ensemble
-    #[nombre d'image:8b, taille des données image 1: 32b, taille des données image x: 32b ...]
-    #TODO concaténer les metadonnées aux binary strings de chaque images
-    return "00000000"
+    enteteValues = encodeEntete(imgs)
+    #n image 8 bits
+    bitString = format(enteteValues[0], "08b")
+    for i in range(1, len(enteteValues)):
+        bitString += format(enteteValues[1], "024b") #max n of bit in encoded is 2^24=16,777,216 bit #TODO verifier si on peut réduire
+    return bitString
 
 # encode les données en une binary string (inclu les métadonnées)
 # data est un dictionnaire contenant:
 #   - image : array de données de l'image
+#   - encodage : string du type d'encodage
 #   - entropie : float bit/symbole théorique
 #   - statistiques : dictionnaire de stats
 #       - minimum : float
@@ -99,6 +104,7 @@ def genereBinString(imgs):
 #           - 0 : liste des symbole unique
 #           - 1 : liste des occurences des symbole 
 #           - 2 : liste des probabilité des symboles
+#   - encoded : binstring de l'image encodé 
 def encode(methode, data):
     if methode == "rlc":
         rlc.encode(data)
@@ -109,7 +115,16 @@ def encode(methode, data):
     else:
         raise("type d'encodage non supporté")
 
-#retourne un tableau de données 
+# calcule les métadonnées à mettre dans l'entête 
+# retourne une liste #[nombre d'image:8b, taille des données image 1: 32b, taille des données image x: 32b ...]
+def encodeEntete(data):
+    enteteList = np.zeros(len(data)+1)
+    enteteList[0] = len(data)
+    for i, img in enumerate(data):
+        enteteList[str(i+1)] = len(img["encoded"])#TODO vérifier que le compte se fait comme il faut
+    return enteteList
+
+#retourne les images décodé
 def decode(methode, data):
     if methode == "rlc":
         decoded = rlc.decode(data)
@@ -121,6 +136,9 @@ def decode(methode, data):
         raise("type d'encodage non supporté")
     
     return decoded
+
+def decodeEntete(data):
+    pass
 
 # compare les statistique des images sources avec 
 def calculDebitBinaire(srcImgs, encImgs):
@@ -180,14 +198,15 @@ if __name__ == "__main__":
     imgsEncodeHuff = lectureFichier( "output\\huffmanEncoded.txt", "txt")
     imgsEncodeRLC = lectureFichier("output\\rlcEncoded.txt", "txt")
     imgsEncodeArith = lectureFichier("output\\arithmetiqueEncoded.txt", "txt")
-    
+
+    #TODO ajuster pour décoder chaque image, doit probablement décoder l'entête pour commencer
     #7. décodage des images
     #7.1 huffman   
     imgsDecodeHuff = decode("huffman", imgsEncodeHuff)
     #7.2 RLC
-    imgsDecodeRLC = decode("huffman", imgsEncodeRLC)
+    imgsDecodeRLC = decode("rlc", imgsEncodeRLC)
     #7.3 arithmétique
-    imgsDecodeArith = decode("huffman", imgsEncodeArith)
+    imgsDecodeArith = decode("arithmetique", imgsEncodeArith)
     
     #8. vérification des images
     print(f"vérification huffman réussi:{verificationCodage(imgs, imgsDecodeHuff)}")
