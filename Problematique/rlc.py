@@ -1,3 +1,5 @@
+from sizeStd import *
+
 def encode(data):
     pass
 
