@@ -7,23 +7,31 @@
 
 import os
 import cv2 as cv
+import numpy as np
 
-RESSOURCE_PATH = "./ressources"
+RESSOURCE_PATH = "Problematique\\ressources"
 
 
 # lis un fichier dans le dossier de ressources du nom <nomFichier> et renvoie les données
 def lectureFichier(nomFichier, type):#ajouter arg type pour fichier txt vs image?
     FP = os.path.join(RESSOURCE_PATH, nomFichier)
-    #lecture d'image
-    if (type == "img"):
-        data = cv.imread(FP)
-    #lecture de texte
-    elif (type == "txt"):
-        with open(FP, "r") as f:
-            data = f.read()
-    #type non supporté
-    else:
-        raise("File type not supported")
+    try:
+        #lecture d'image
+        if (type == "img"):
+            data = cv.imread(FP, cv.IMREAD_GRAYSCALE)            
+        #lecture de texte
+        elif (type == "txt"):
+            with open(FP, "r") as f:
+                data = f.read()
+        #type non supporté
+        else:
+            raise("File type not supported")
+
+        if data is None :
+            raise("Error reading data")
+    
+    except Exception as e:
+        raise(e)
 
     return data
 
@@ -36,8 +44,18 @@ def enregistreFichier(binString, nomFichier):
 
     
 # analyse les statistique d'une images et les packages dans un dictionnaire
-def analyseStatistiqueImage(image):
-    pass
+def analyseStatistiqueImage(image:list[int]):
+    statDict = dict()
+    statDict["min"] = np.min(image)
+    statDict["max"] = np.max(image)
+    statDict["mean"] = np.mean(image)
+    statDict["std"] = np.std(image)
+    symbolDict = dict()
+    image1d = [item for sublist in image for item in sublist]
+    for 
+
+    
+
 
 
 # analyse les statistique de données encodées et les packages dans un dictionnaire
@@ -84,6 +102,25 @@ def verificationEncode(srcImg, decImg):
     pass
 
 if __name__ == "__main__":
-    print("hello world")
+    #1. lecture des images
+    img0 = lectureFichier("source0.jpg", "img")
+    img1 = lectureFichier("source1.jpg", "img")
+    img2 = lectureFichier("source2.jpg", "img")
+    img3 = lectureFichier("source3.jpg", "img")
+    imgs = [{"image":img0}, {"image":img1}, {"image":img2}, {"image":img3}]
+
+    #2. analyse statistiques
+    for img in imgs:
+        img["statistiques"] = analyseStatistiqueImage(img["image"])
+
+    #3. calculs d'entropie
+    #4. encodage avec les 3 méthodes
+    #5. enregistrement des données d'encodage
+    #6. lecture des fichiers encodé
+    #7. décodage des images
+    #8. vérification des images
+    #9. analyses statistiques des encodeurs
+
+
 
 
