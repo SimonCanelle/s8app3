@@ -46,13 +46,21 @@ def enregistreFichier(binString, nomFichier):
 # analyse les statistique d'une images et les packages dans un dictionnaire
 def analyseStatistiqueImage(image:list[int]):
     statDict = dict()
-    statDict["min"] = np.min(image)
-    statDict["max"] = np.max(image)
-    statDict["mean"] = np.mean(image)
-    statDict["std"] = np.std(image)
-    symbolDict = dict()
-    image1d = [item for sublist in image for item in sublist]
-    for 
+    statDict["minimum"] = np.min(image)
+    statDict["maximum"] = np.max(image)
+    statDict["moyenne"] = np.mean(image)
+    statDict["ecart-type"] = np.std(image)
+    
+    symboleStats = np.unique(image, return_counts=True)
+    #conversion de tuple a liste pour futur calculs
+    symboleStats = [symboleStats[0], symboleStats[1], np.zeros(symboleStats[0].size)]
+    nPixel = len(image) * len(image[0])
+    for i, car in enumerate(symboleStats[0]): 
+         symboleStats[2][i] = symboleStats[1][i]/nPixel    
+    
+    statDict["symboles"] = symboleStats #symbole[0] : caractère, symbole[1] : occurences, symbole[2]: propabilité
+    
+    return statDict
 
     
 
