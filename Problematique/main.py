@@ -4,12 +4,31 @@
 # Description : Comparaison de 3 méthode d'encodage entropique. RLC vs Arithmétique vs Huffman
 ###
 
-# lis un fichier dans le dossier de ressources du nom <nomFichier> et renvoie l'objet File
-def lectureFichier(nomFichier):#ajouter arg type pour fichier txt vs image?
-    pass
+
+import os
+import cv2 as cv
+
+RESSOURCE_PATH = "./ressources"
+
+# lis un fichier dans le dossier de ressources du nom <nomFichier> et renvoie les données
+def lectureFichier(nomFichier, type):#ajouter arg type pour fichier txt vs image?
+    FP = os.path.join(RESSOURCE_PATH, nomFichier)
+    
+    if (type == "img"):
+        data = cv.imread(FP)
+
+    elif (type == "txt"):
+        with open(FP, "r") as f:
+            data = f.read()
+
+    else:
+        raise("File type not supported")
+
+    return data
+
 
 # enregistre les données dans un fichier du nom donné
-def enregistreFichier(data, nomFichier):
+def enregistreFichier(binString, nomFichier):
     pass
 
 # analyse les statistique d'une images et les packages dans un dictionnaire
@@ -26,11 +45,26 @@ def calculeEntropie(data, stats):
 
 # encode les données en une binary string
 def encode(methode, data, stats):
-    pass
+    if methode == "rlc":
+        pass
+    elif methode == "huffman":
+        pass
+    elif methode == "arithmetique":
+        pass
+    else:
+        raise("type d'encodage non supporté")
 
 #retourne un tableau de données 
 def decode(methode, data):
-    pass
+    if methode == "rlc":
+        pass
+    elif methode == "huffman":
+        pass
+    elif methode == "arithmetique":
+        pass
+    else:
+        raise("type d'encodage non supporté")
+    
 
 # compare les statistique des images sources avec 
 def calculDebitBinaire(srcStats, encStats):
