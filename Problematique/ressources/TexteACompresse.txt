@@ -1,0 +1,319 @@
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
+Lossless compression is a compression technique that does not lose any data in the compression process.
+
+Lossless compression "packs data" into a smaller file size by using a kind of internal shorthand to signify redundant data. If an original file is 1.5MB (megabytes), lossless compression can reduce it to about half that size, depending on the type of file being compressed. This makes lossless compression convenient for transferring files across the Internet, as smaller files transfer faster. Lossless compression is also handy for storing files as they take up less room.
+
+The zip convention, used in programs like WinZip, uses lossless compression. For this reason zip software is popular for compressing program and data files. That's because when these files are decompressed, all bytes must be present to ensure their integrity. If bytes are missing from a program, it won't run. If bytes are missing from a data file, it will be incomplete and garbled. GIF image files also use lossless compression.
+
+Lossless compression has advantages and disadvantages. The advantage is that the compressed file will decompress to an exact duplicate of the original file, mirroring its quality. The disadvantage is that the compression ratio is not all that high, precisely because no data is lost.
+
