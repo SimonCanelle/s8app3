@@ -17,7 +17,6 @@ import arithmetique
 
 RESSOURCE_PATH = "Problematique\\ressources"
 
-
 # lis un fichier dans le dossier de ressources du nom <nomFichier> et renvoie les données
 def lectureFichier(nomFichier, type):#ajouter arg type pour fichier txt vs image?
     FP = os.path.join(RESSOURCE_PATH, nomFichier)
@@ -94,6 +93,7 @@ def genereBinString(imgs):
 # encode les données en une binary string (inclu les métadonnées)
 # data est un dictionnaire contenant:
 #   - image : array de données de l'image
+#   - encodage : string du type d'encodage
 #   - entropie : float bit/symbole théorique
 #   - statistiques : dictionnaire de stats
 #       - minimum : float
@@ -104,6 +104,7 @@ def genereBinString(imgs):
 #           - 0 : liste des symbole unique
 #           - 1 : liste des occurences des symbole 
 #           - 2 : liste des probabilité des symboles
+#   - encoded : binstring de l'image encodé 
 def encode(methode, data):
     if methode == "rlc":
         rlc.encode(data)
@@ -203,9 +204,9 @@ if __name__ == "__main__":
     #7.1 huffman   
     imgsDecodeHuff = decode("huffman", imgsEncodeHuff)
     #7.2 RLC
-    imgsDecodeRLC = decode("huffman", imgsEncodeRLC)
+    imgsDecodeRLC = decode("rlc", imgsEncodeRLC)
     #7.3 arithmétique
-    imgsDecodeArith = decode("huffman", imgsEncodeArith)
+    imgsDecodeArith = decode("arithmetique", imgsEncodeArith)
     
     #8. vérification des images
     print(f"vérification huffman réussi:{verificationCodage(imgs, imgsDecodeHuff)}")
