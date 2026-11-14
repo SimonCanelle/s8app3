@@ -1,7 +1,7 @@
 from sizeStd import *
 
-def encode(data, size_id):
+def encode(data):
     return "000000000"
 
-def decode(data):
+def decode(data, size_id):
     pass
