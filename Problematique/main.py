@@ -136,20 +136,20 @@ def encodeEntete(data):
 def decode(data):
     dataStartPtr, nImages, types, encodeLens = decodeEntete(data)
     imgs = [dict()]*nImages
-    for i in range(nImages):
+    for i in range(nImages):#i représente aussi le size de l'image (toujours dans le même sens)
         #isole les données de l'image
         imgs[i]["encoded"] = data[dataStartPtr:dataStartPtr+encodeLens[i]]
         dataStartPtr+=encodeLens[i]
         #asspcie le bon type de décodage
         if types[i] == 0:
             imgs[i]["encodage"] = "rlc"
-            imgs[i]["image"] = rlc.decode(data)
+            imgs[i]["image"] = rlc.decode(data, i)
         elif types[i] == 1:
             imgs[i]["encodage"] = "huffman"
-            imgs[i]["image"] = huffman.decode(data)
+            imgs[i]["image"] = huffman.decode(data, i)
         elif types[i] == 2:
             imgs[i]["encodage"] = "arithmetique"
-            imgs[i]["image"] = arithmetique.decode(data)
+            imgs[i]["image"] = arithmetique.decode(data, i)
         else:
             raise("type d'encodage non supporté")
     
