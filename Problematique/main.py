@@ -104,6 +104,7 @@ def genereBinString(imgs):
 #           - 1 : liste des occurences des symbole 
 #           - 2 : liste des probabilité des symboles
 #   - encoded : binstring de l'image encodé 
+#   - debit-bin : float du bitrate de l'encodage
 def encode(methode, data):
     if methode == "rlc":
         data["encoded"] = rlc.encode(data)
@@ -133,46 +134,57 @@ def encodeEntete(data):
     return entete
 
 #Recrée le dictionnaire data uilisé pour l'encodage
-def decode(data):
-    dataStartPtr, nImages, types, encodeLens = decodeEntete(data)
+def decode(encdata):
+    dataStartPtr, nImages, types, encodeLens = decodeEntete(encdata)
     imgs = [dict()]*nImages
     for i in range(nImages):#i représente aussi le size de l'image (toujours dans le même sens)
         #isole les données de l'image
-        imgs[i]["encoded"] = data[dataStartPtr:dataStartPtr+encodeLens[i]]
+        imgs[i]["encoded"] = encdata[dataStartPtr:dataStartPtr+encodeLens[i]]
         dataStartPtr+=encodeLens[i]
         #asspcie le bon type de décodage
         if types[i] == 0:
             imgs[i]["encodage"] = "rlc"
-            imgs[i]["image"] = rlc.decode(data, i)
+            imgs[i]["image"] = rlc.decode(encdata, i)
         elif types[i] == 1:
             imgs[i]["encodage"] = "huffman"
-            imgs[i]["image"] = huffman.decode(data, i)
+            imgs[i]["image"] = huffman.decode(encdata, i)
         elif types[i] == 2:
             imgs[i]["encodage"] = "arithmetique"
-            imgs[i]["image"] = arithmetique.decode(data, i)
+            imgs[i]["image"] = arithmetique.decode(encdata, i)
         else:
             raise("type d'encodage non supporté")
     
     return imgs
 
-def decodeEntete(data):
+def decodeEntete(encdata):
     ptr = 0
-    nImages = int(data[0:7], 2)
+    nImages = int(encdata[0:7], 2)
     ptr+=8
     types = []
     encodeLens = []
     for i in range(nImages):
-        types.append(int(data[ptr:ptr+2],2))#2 bit type
+        types.append(int(encdata[ptr:ptr+2],2))#2 bit type
         ptr+=2
-        encodeLens.append(int(data[ptr:ptr+24],2))# 24 bit longeur data
+        encodeLens.append(int(encdata[ptr:ptr+24],2))# 24 bit longeur data
         ptr+=24
     return ptr, nImages, types, encodeLens
 
 
-# compare les statistique des images sources avec 
-def calculDebitBinaire(data):
-    #TODO faire le calcul du débit binaire
-    pass
+# calcul les débit binaires pour chques images et retourne le débit binaire total
+def calculDebitBinaire(data, bintotal):
+    # calcul du débit pour chaque images
+    for i,img in enumerate(data):
+        img["debit-bin"] = len(img["encoded"])/(image_sizes[i][0]*image_sizes[i][1])
+    
+    #calcul du débit total
+    total_pixel = 0
+    for i in image_sizes:
+        total_pixel += i[0]*i[1]
+    debit_total = bintotal/total_pixel
+
+    return debit_total
+    
+
 
 # compare une image source avec sa version décodé
 # retourne vrai si elle sont identique (ce qu'on veut avec lossless comp)
@@ -247,22 +259,35 @@ if __name__ == "__main__":
     imgsDecodeArith = decode(imgsEncodeArith)
     
     #8. vérification des images
-    print(f"vérification huffman réussi:{verificationCodage(imgs, imgsDecodeHuff)}")
-    print(f"vérification RLC réussi:{verificationCodage(imgs, imgsDecodeRLC)}")
-    print(f"vérification arithmétique réussi:{verificationCodage(imgs, imgsDecodeArith)}")
+    print(f"vérification huffman réussi : {verificationCodage(imgs, imgsDecodeHuff)}")
+    print(f"vérification RLC réussi : {verificationCodage(imgs, imgsDecodeRLC)}")
+    print(f"vérification arithmétique réussi : {verificationCodage(imgs, imgsDecodeArith)}")
 
     #9. analyses statistiques des encodeurs
+    print("Calcul de débit, analyse stat et calcul d'entropie des encodeurs")
     #9.1 huffman
-    huffmanDebitBin = calculDebitBinaire(imgsHuff) #total et pour chaque image
-    huffmanStats = analyseStatistiqueImage(imgsEncodeHuff)
+    huffmanDebitBin = calculDebitBinaire(imgsDecodeHuff, len(binStringHuff)) #total et pour chaque image    
+    for img in imgsDecodeHuff:
+        #2. analyse statistiques
+        img["statistiques"] = analyseStatistiqueImage(img["image"])        
+        #3. calculs d'entropie
+        img["entropie"] = calculeEntropie(img["statistiques"])
 
     #9.2 RLC
-    rlcDebitBin = calculDebitBinaire(imgsRLC) #total et pour chaque image
-    rlcStats = analyseStatistiqueImage(imgsEncodeRLC)
+    rlcDebitBin = calculDebitBinaire(imgsDecodeRLC, len(binStringRLC)) #total et pour chaque image
+    for img in imgsDecodeRLC:
+        #2. analyse statistiques
+        img["statistiques"] = analyseStatistiqueImage(img["image"])        
+        #3. calculs d'entropie
+        img["entropie"] = calculeEntropie(img["statistiques"])
     
     #9.3 Arithmetique
-    arithDebitBin = calculDebitBinaire(imgsArith) #total et pour chaque image
-    arithStats = analyseStatistiqueImage(imgsEncodeArith)
+    arithDebitBin = calculDebitBinaire(imgsDecodeArith, len(binStringArith)) #total et pour chaque image
+    for img in imgsDecodeArith:
+        #2. analyse statistiques
+        img["statistiques"] = analyseStatistiqueImage(img["image"])        
+        #3. calculs d'entropie
+        img["entropie"] = calculeEntropie(img["statistiques"])
     
     #10. TODO print les valeurs intéressantes
 
