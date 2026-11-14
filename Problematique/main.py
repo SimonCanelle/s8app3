@@ -50,7 +50,7 @@ def enregistreFichier(binString, nomFichier):
 
     
 # analyse les statistique d'une images et les packages dans un dictionnaire
-def analyseStatistiqueImage(image:list[int]):
+def analyseStatistique(image:list[int]):
     statDict = dict()
     statDict["minimum"] = np.min(image)
     statDict["maximum"] = np.max(image)
@@ -66,13 +66,6 @@ def analyseStatistiqueImage(image:list[int]):
     statDict["symboles"] = symboleStats #symbole[0] : caractère, symbole[1] : occurences, symbole[2]: propabilité
     
     return statDict
-
-    
-# analyse les statistique de données encodées et les packages dans un dictionnaire
-def analyseStatistiqueEncode(encData):
-    #TODO coder l'analyse statistique des données encodées
-    pass
-
 
 # calcule l'entropie d'une série de symbole
 def calculeEntropie(statsDict):
@@ -207,7 +200,7 @@ if __name__ == "__main__":
     print("Analyse stat et calcul d'entropie")
     for img in imgs:
         #2. analyse statistiques
-        img["statistiques"] = analyseStatistiqueImage(img["image"])        
+        img["statistiques"] = analyseStatistique(img["image"])        
         #3. calculs d'entropie
         img["entropie"] = calculeEntropie(img["statistiques"])
         
@@ -269,7 +262,7 @@ if __name__ == "__main__":
     huffmanDebitBin = calculDebitBinaire(imgsDecodeHuff, len(binStringHuff)) #total et pour chaque image    
     for img in imgsDecodeHuff:
         #2. analyse statistiques
-        img["statistiques"] = analyseStatistiqueImage(img["image"])        
+        img["statistiques"] = analyseStatistique(img["image"])        
         #3. calculs d'entropie
         img["entropie"] = calculeEntropie(img["statistiques"])
 
@@ -277,7 +270,7 @@ if __name__ == "__main__":
     rlcDebitBin = calculDebitBinaire(imgsDecodeRLC, len(binStringRLC)) #total et pour chaque image
     for img in imgsDecodeRLC:
         #2. analyse statistiques
-        img["statistiques"] = analyseStatistiqueImage(img["image"])        
+        img["statistiques"] = analyseStatistique(img["image"])        
         #3. calculs d'entropie
         img["entropie"] = calculeEntropie(img["statistiques"])
     
@@ -285,7 +278,7 @@ if __name__ == "__main__":
     arithDebitBin = calculDebitBinaire(imgsDecodeArith, len(binStringArith)) #total et pour chaque image
     for img in imgsDecodeArith:
         #2. analyse statistiques
-        img["statistiques"] = analyseStatistiqueImage(img["image"])        
+        img["statistiques"] = analyseStatistique(img["image"])        
         #3. calculs d'entropie
         img["entropie"] = calculeEntropie(img["statistiques"])
     
