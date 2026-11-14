@@ -1,8 +1,7 @@
 from sizeStd import *
 
 def encode(data):
-    image_sizes[0]
-    pass
+    return "000000000"
 
 def decode(data):
     pass

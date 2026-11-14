@@ -14,6 +14,7 @@ import copy
 import huffman
 import rlc
 import arithmetique
+from sizeStd import *
 
 RESSOURCE_PATH = "Problematique\\ressources"
 
@@ -84,8 +85,8 @@ def calculeEntropie(statsDict):
 # génère les métadonnées et construit la binary string à enregistrer 
 def genereBinString(imgs):
     bitString = encodeEntete(imgs)
-    for i in imgs:
-        bitString += imgs["encoded"]    
+    for img in imgs:
+        bitString += img["encoded"]    
     return bitString
 
 # encode les données en une binary string (inclu les métadonnées)
@@ -169,7 +170,7 @@ def decodeEntete(data):
 
 
 # compare les statistique des images sources avec 
-def calculDebitBinaire(srcImgs, encImgs):
+def calculDebitBinaire(data):
     #TODO faire le calcul du débit binaire
     pass
 
@@ -177,19 +178,21 @@ def calculDebitBinaire(srcImgs, encImgs):
 # retourne vrai si elle sont identique (ce qu'on veut avec lossless comp)
 def verificationCodage(srcImg, decImg):    
     for i in range(len(srcImg)):
-        if (srcImg[i]["image"] != decImg[i]):#TODO revérifier la comparaison après avoir fini les décodage 
+        if ((srcImg[i]["image"] != decImg[i]["image"]).all()):#TODO revérifier la comparaison après avoir fini les décodage 
             return False
     return True
 
 
 if __name__ == "__main__":
     #1. lecture des images
+    print("Lecture des images")
     img0 = lectureFichier("source0.jpg", "img")
     img1 = lectureFichier("source1.jpg", "img")
     img2 = lectureFichier("source2.jpg", "img")
     img3 = lectureFichier("source3.jpg", "img")
     imgs = [{"image":img0}, {"image":img1}, {"image":img2}, {"image":img3}]
 
+    print("Analyse stat et calcul d'entropie")
     for img in imgs:
         #2. analyse statistiques
         img["statistiques"] = analyseStatistiqueImage(img["image"])        
@@ -197,21 +200,25 @@ if __name__ == "__main__":
         img["entropie"] = calculeEntropie(img["statistiques"])
         
     #4. encodage avec les 3 méthodes
-    #le champs encode doit contenir la binary string des données avec les métadonnée prêtes à écrire 
+    #le champs encode de chaque image doit contenir la binary string des données avec les métadonnée prêtes à écrire 
     #4.1 huffman
+    print("Encodage huffman")
     imgsHuff = copy.deepcopy(imgs)
     for img in imgsHuff:
         img["encode"] = encode("huffman",img)
     #4.2 RLC
+    print("Encodage RLC")
     imgsRLC = copy.deepcopy(imgs)
     for img in imgsRLC:
         img["encode"] = encode("rlc",img)
     #4.3 arithmétique
+    print("Encodage arithmétique")
     imgsArith = copy.deepcopy(imgs)
     for img in imgsArith:
         img["encode"] = encode("arithmetique",img)
     
     #5. enregistrement des données d'encodage
+    print("Enregistrement des données encodées")
     #5.1 huffman
     binStringHuff = genereBinString(imgsHuff)
     enregistreFichier(binStringHuff, "output\\huffmanEncoded.txt")    
@@ -222,37 +229,42 @@ if __name__ == "__main__":
     binStringArith = genereBinString(imgsArith)
     enregistreFichier(binStringArith, "output\\arithmetiqueEncoded.txt")  
 
+    print("Lecture des données encodées")
     #6. lecture des fichiers encodé (nécessaire pour démontrer la séparation entre l'encodeur et le décodeur)
     imgsEncodeHuff = lectureFichier( "output\\huffmanEncoded.txt", "txt")
     imgsEncodeRLC = lectureFichier("output\\rlcEncoded.txt", "txt")
     imgsEncodeArith = lectureFichier("output\\arithmetiqueEncoded.txt", "txt")
 
-    #TODO ajuster pour décoder chaque image, doit probablement décoder l'entête pour commencer
     #7. décodage des images
     #7.1 huffman   
+    print("Décodage huffman")
     imgsDecodeHuff = decode(imgsEncodeHuff)
     #7.2 RLC
+    print("Décodage RLC")
     imgsDecodeRLC = decode(imgsEncodeRLC)
     #7.3 arithmétique
+    print("Décodage arithmétique")
     imgsDecodeArith = decode(imgsEncodeArith)
     
     #8. vérification des images
     print(f"vérification huffman réussi:{verificationCodage(imgs, imgsDecodeHuff)}")
-    print(f"vérification RLC réussi:{verificationCodage(imgs, imgsDecodeHuff)}")
-    print(f"vérification arithmétique réussi:{verificationCodage(imgs, imgsDecodeHuff)}")
+    print(f"vérification RLC réussi:{verificationCodage(imgs, imgsDecodeRLC)}")
+    print(f"vérification arithmétique réussi:{verificationCodage(imgs, imgsDecodeArith)}")
 
     #9. analyses statistiques des encodeurs
     #9.1 huffman
     huffmanDebitBin = calculDebitBinaire(imgsHuff) #total et pour chaque image
-    huffmanStats = analyseStatistiqueEncode(imgsEncodeHuff)
+    huffmanStats = analyseStatistiqueImage(imgsEncodeHuff)
 
     #9.2 RLC
     rlcDebitBin = calculDebitBinaire(imgsRLC) #total et pour chaque image
-    rlcStats = analyseStatistiqueEncode(imgsEncodeRLC)
+    rlcStats = analyseStatistiqueImage(imgsEncodeRLC)
     
     #9.3 Arithmetique
     arithDebitBin = calculDebitBinaire(imgsArith) #total et pour chaque image
-    arithStats = analyseStatistiqueEncode(imgsEncodeArith)
+    arithStats = analyseStatistiqueImage(imgsEncodeArith)
     
+    #10. TODO print les valeurs intéressantes
+
     
     print("ligne pour breakpoint")   
