@@ -83,11 +83,9 @@ def calculeEntropie(statsDict):
 
 # génère les métadonnées et construit la binary string à enregistrer 
 def genereBinString(imgs):
-    enteteValues = encodeEntete(imgs)
-    #n image 8 bits
-    bitString = format(enteteValues[0], "08b")
-    for i in range(1, len(enteteValues)):
-        bitString += format(enteteValues[1], "024b") #max n of bit in encoded is 2^24=16,777,216 bit #TODO verifier si on peut réduire
+    bitString = encodeEntete(imgs)
+    for i in imgs:
+        bitString += imgs["encoded"]    
     return bitString
 
 # encode les données en une binary string (inclu les métadonnées)
@@ -108,37 +106,67 @@ def genereBinString(imgs):
 def encode(methode, data):
     if methode == "rlc":
         data["encoded"] = rlc.encode(data)
+        data["encodage"] = "rlc"
     elif methode == "huffman":
-        huffman.encode(data)
+        data["encoded"] = huffman.encode(data)
+        data["encodage"] = "huffman"
     elif methode == "arithmetique":
-        arithmetique.encode(data)
+        data["encoded"] = arithmetique.encode(data)
+        data["encodage"] = "arithmetique"
     else:
         raise("type d'encodage non supporté")
 
 # calcule les métadonnées à mettre dans l'entête 
-# retourne une liste #[nombre d'image:8b, taille des données image 1: 32b, taille des données image x: 32b ...]
+#TODO vérifier que les données 
+# retourne une liste #[nombre d'image:8b, type encodage:2b, longueur de données encodées:24b] #16,777,216 max element in encoded
 def encodeEntete(data):
-    enteteList = np.zeros(len(data)+1)
-    enteteList[0] = len(data)
-    for i, img in enumerate(data):
-        enteteList[str(i+1)] = len(img["encoded"])#TODO vérifier que le compte se fait comme il faut
-    return enteteList
+    entete = format(len(data), "08b")
+    for img in data:
+        if img == "rlc":
+             entete += format(0, "02b")
+        elif img == "huffman":
+            entete += format(1, "02b")
+        elif img == "arithmetique":     
+            entete += format(2, "02b")
+        entete += format(len(img["encoded"]), "024b")
+    return entete
 
-#retourne les images décodé
-def decode(methode, data):
-    if methode == "rlc":
-        decoded = rlc.decode(data)
-    elif methode == "huffman":
-        decoded = huffman.decode(data)
-    elif methode == "arithmetique":
-        decoded = arithmetique.decode(data)
-    else:
-        raise("type d'encodage non supporté")
+#Recrée le dictionnaire data uilisé pour l'encodage
+def decode(data):
+    dataStartPtr, nImages, types, encodeLens = decodeEntete(data)
+    imgs = [dict()]*nImages
+    for i in range(nImages):
+        #isole les données de l'image
+        imgs[i]["encoded"] = data[dataStartPtr:dataStartPtr+encodeLens[i]]
+        dataStartPtr+=encodeLens[i]
+        #asspcie le bon type de décodage
+        if types[i] == 0:
+            imgs[i]["encodage"] = "rlc"
+            imgs[i]["image"] = rlc.decode(data)
+        elif types[i] == 1:
+            imgs[i]["encodage"] = "huffman"
+            imgs[i]["image"] = huffman.decode(data)
+        elif types[i] == 2:
+            imgs[i]["encodage"] = "arithmetique"
+            imgs[i]["image"] = arithmetique.decode(data)
+        else:
+            raise("type d'encodage non supporté")
     
-    return decoded
+    return imgs
 
 def decodeEntete(data):
-    pass
+    ptr = 0
+    nImages = int(data[0:7], 2)
+    ptr+=8
+    types = []
+    encodeLens = []
+    for i in range(nImages):
+        types.append(int(data[ptr:ptr+2],2))#2 bit type
+        ptr+=2
+        encodeLens.append(int(data[ptr:ptr+24],2))# 24 bit longeur data
+        ptr+=24
+    return ptr, nImages, types, encodeLens
+
 
 # compare les statistique des images sources avec 
 def calculDebitBinaire(srcImgs, encImgs):
@@ -202,11 +230,11 @@ if __name__ == "__main__":
     #TODO ajuster pour décoder chaque image, doit probablement décoder l'entête pour commencer
     #7. décodage des images
     #7.1 huffman   
-    imgsDecodeHuff = decode("huffman", imgsEncodeHuff)
+    imgsDecodeHuff = decode(imgsEncodeHuff)
     #7.2 RLC
-    imgsDecodeRLC = decode("rlc", imgsEncodeRLC)
+    imgsDecodeRLC = decode(imgsEncodeRLC)
     #7.3 arithmétique
-    imgsDecodeArith = decode("arithmetique", imgsEncodeArith)
+    imgsDecodeArith = decode(imgsEncodeArith)
     
     #8. vérification des images
     print(f"vérification huffman réussi:{verificationCodage(imgs, imgsDecodeHuff)}")
