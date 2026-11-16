@@ -15,6 +15,7 @@ import huffman
 import rlc
 import arithmetique
 from sizeStd import *
+from itertools import product
 
 RESSOURCE_PATH = "Problematique\\ressources"
 
@@ -70,12 +71,38 @@ def analyseStatistique(image:list[int]):
     return statDict
 
 # calcule l'entropie d'une série de symbole
-def calculeEntropie(statsDict):
-    entropie = 0
+def calculeEntropie(data):
+    #ordre 1
+    statsDict = data["statistiques"]
+    entropieO1 = 0
     for prob in statsDict["symboles"][2]:
-        entropie += prob * np.log2(prob)
-    entropie *= -1
-    return entropie
+        entropieO1 += prob * np.log2(prob)
+    entropieO1 *= -1
+
+    #ordre 2 
+    data1d = data["image"].reshape(-1)
+    values = np.arange(0,256,1)
+    paires = list(product(values, repeat=2))
+    paireDict = {}
+    for paire in paires:
+        key = format(paire[0], "03d")
+        key += format(paire[1], "03d")
+        paireDict[key] = 0
+    
+    for i in range(int(len(data1d)/2)):
+        key = format(data1d[i*2], "03d")
+        key += format(data1d[i*2+1], "03d")
+        paireDict[key] += 1
+
+    paireDict = {k: v for k, v in paireDict.items() if v > 0}
+
+    entropieO2 = 0
+    for prob in paireDict.values():
+        prob /= len(data1d)/2
+        entropieO2 += prob * np.log2(prob)
+    entropieO2 *= -1
+    
+    return {"1":entropieO1, "2":entropieO2}
 
 # génère les métadonnées et construit la binary string à enregistrer 
 def genereBinString(imgs):
@@ -203,7 +230,7 @@ if __name__ == "__main__":
         #2. analyse statistiques
         img["statistiques"] = analyseStatistique(img["image"])        
         #3. calculs d'entropie
-        img["entropie"] = calculeEntropie(img["statistiques"])
+        img["entropie"] = calculeEntropie(img)
         
     #4. encodage avec les 3 méthodes
     #le champs encode de chaque image doit contenir la binary string des données avec les métadonnée prêtes à écrire 
@@ -265,7 +292,7 @@ if __name__ == "__main__":
         #2. analyse statistiques
         img["statistiques"] = analyseStatistique(img["image"])        
         #3. calculs d'entropie
-        img["entropie"] = calculeEntropie(img["statistiques"])
+        img["entropie"] = calculeEntropie(img)
 
     #9.2 RLC
     rlcDebitBin = calculDebitBinaire(imgsDecodeRLC, len(binStringRLC)) #total et pour chaque image
@@ -273,7 +300,7 @@ if __name__ == "__main__":
         #2. analyse statistiques
         img["statistiques"] = analyseStatistique(img["image"])        
         #3. calculs d'entropie
-        img["entropie"] = calculeEntropie(img["statistiques"])
+        img["entropie"] = calculeEntropie(img)
     
     #9.3 Arithmetique
     arithDebitBin = calculDebitBinaire(imgsDecodeArith, len(binStringArith)) #total et pour chaque image
@@ -281,7 +308,7 @@ if __name__ == "__main__":
         #2. analyse statistiques
         img["statistiques"] = analyseStatistique(img["image"])        
         #3. calculs d'entropie
-        img["entropie"] = calculeEntropie(img["statistiques"])
+        img["entropie"] = calculeEntropie(img)
     
     #10. TODO print les valeurs intéressantes
     print("===== Methode RLC =====")
