@@ -135,10 +135,14 @@ def encode(methode, data):
         data["encoded"] = huffman.encode(data)
         data["encodage"] = "huffman"
     elif methode == "arithmetique":
-        data["encoded"] = arithmetique.encode(data)
+        # L'encodeur arithmétique retourne le débit, le flux codé et Cum_count.
+        # Cum_count reste en mémoire pour être fourni ensuite au décodeur.
+        debit, data["encoded"], data["Cum_count"] = arithmetique.encode(data)
+        data["debit-bin"] = debit
         data["encodage"] = "arithmetique"
     else:
         raise("type d'encodage non supporté")
+    return data["encoded"]
 
 # calcule les métadonnées à mettre dans l'entête 
 #TODO vérifier que les données 
@@ -156,7 +160,7 @@ def encodeEntete(data):
     return entete
 
 #Recrée le dictionnaire data uilisé pour l'encodage
-def decode(encdata):
+def decode(encdata, Cum_count=None):
     dataStartPtr, nImages, types, encodeLens = decodeEntete(encdata)
     imgsDec = [{} for _ in range(nImages)]
     for i in range(nImages):#i représente aussi le size de l'image (toujours dans le même sens)
@@ -172,7 +176,9 @@ def decode(encdata):
             imgsDec[i]["image"] = huffman.decode(imgsDec[i]["encoded"], i)
         elif types[i] == 2:
             imgsDec[i]["encodage"] = "arithmetique"
-            imgsDec[i]["image"] = arithmetique.decode(imgsDec[i]["encoded"], i)
+            if Cum_count is None:
+                raise ValueError("Cum_count doit être fourni pour décoder une image arithmétique.")
+            imgsDec[i]["image"] = arithmetique.decode(imgsDec[i]["encoded"], Cum_count[i], i)
         else:
             raise("type d'encodage non supporté")
     
@@ -209,10 +215,14 @@ def calculDebitBinaire(data, bintotal):
 
 # compare une image source avec sa version décodé
 # retourne vrai si elle sont identique (ce qu'on veut avec lossless comp)
-def verificationCodage(srcImg, decImg):    
-    for i in range(len(srcImg)):
-        if ((srcImg[i]["image"] != decImg[i]["image"]).all()):#TODO revérifier la comparaison après avoir fini les décodage 
+def verificationCodage(srcImg, decImg):
+    if len(srcImg) != len(decImg):
+        return False
+        
+    for source, decodee in zip(srcImg, decImg):
+        if not np.array_equal(source["image"], decodee["image"]):
             return False
+        
     return True
 
 
@@ -277,7 +287,8 @@ if __name__ == "__main__":
     imgsDecodeRLC = decode(imgsEncodeRLC)
     #7.3 arithmétique
     print("Décodage arithmétique")
-    imgsDecodeArith = decode(imgsEncodeArith)
+    Cum_count = [img["Cum_count"] for img in imgsArith] # Cum_count est transmis hors du fichier.
+    imgsDecodeArith = decode(imgsEncodeArith, Cum_count)
     
     #8. vérification des images
     print(f"vérification huffman réussi : {verificationCodage(imgs, imgsDecodeHuff)}")

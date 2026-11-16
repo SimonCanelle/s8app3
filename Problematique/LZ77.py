@@ -2,8 +2,8 @@ import numpy as np
 
 # Initialisations
 NomFichierCompresse = "CodageLZ77.bin"
-DimBuffer = 10       # À modifier
-DimF_Analyse = 10    # À modifier
+DimBuffer = 1500       # À modifier
+DimF_Analyse = 1500    # À modifier
 Buffer = np.zeros(DimBuffer, dtype=np.uint8)
 
 # Lecture du fichier de départ
@@ -62,7 +62,7 @@ while Position < LongueurTexteOriginal:
 
 
 # Conversion du vecteur codé en tableau NumPy
-TexteCodee = np.array(TexteCodee, dtype=np.uint8)
+TexteCodee = np.array(TexteCodee, dtype=np.uint16)
 
 # Enregistrement
 with open(NomFichierCompresse, "wb") as fichier:
