@@ -16,6 +16,8 @@ import rlc
 import arithmetique
 from sizeStd import *
 from itertools import product
+import matplotlib.pyplot as plt
+from matplotlib.colors import LogNorm
 
 RESSOURCE_PATH = "Problematique\\ressources"
 
@@ -226,6 +228,25 @@ def verificationCodage(srcImg, decImg):
     return True
 
 
+def calculeHistogrammes(image):
+    pixels = image.reshape(-1).astype(np.int64)
+
+    # Ordre 1 : occurrences de chaque niveau de gris
+    histogramme1 = np.bincount(pixels, minlength=256)
+
+    # Ordre 2 : paires successives de pixels
+    premier = pixels[0:-1:2]
+    second = pixels[1::2]
+    codes_paires = premier * 256 + second
+    histogramme2 = np.bincount(codes_paires, minlength=256 * 256).reshape(256, 256)
+
+    return histogramme1, histogramme2
+
+
+
+
+
+
 if __name__ == "__main__":
     #1. lecture des images
     print("Lecture des images")
@@ -336,3 +357,33 @@ if __name__ == "__main__":
     print(f"debit binaire tot : {arithDebitBin:.04f} bit/pixel")
     for i,img in enumerate(imgsDecodeArith):
         print(f"debit binaire img{i} : {img["debit-bin"]:.04f} bit/pixel")
+
+    
+    # Affichage des histogrammes
+    for i, img in enumerate(imgs):
+        hist1, hist2 = calculeHistogrammes(img["image"])
+
+        print(f"Image {i}")
+        print(f"Entropie d'ordre 1 : {img['entropie']['1']:.4f} bit/pixel")
+        print(
+            f"Entropie d'ordre 2 : {img['entropie']['2']:.4f} bit/paire "
+            f"({img['entropie']['2'] / 2:.4f} bit/pixel)"
+        )
+
+        fig, axes = plt.subplots(1, 2, figsize=(13, 5))
+
+        axes[0].bar(np.arange(256), hist1)
+        axes[0].set_title(f"Image {i} : Histogramme d'ordre 1")
+        axes[0].set_xlabel("Niveau de gris")
+        axes[0].set_ylabel("Occurrences")
+        axes[0].set_xlim(0, 255)
+
+        image_affichee = axes[1].imshow(hist2, origin="lower", aspect="auto", norm=LogNorm())
+        fig.colorbar(image_affichee, ax=axes[1], label="Occurrences")
+        axes[1].set_title(f"Image {i} : Histogramme d'ordre 2")
+        axes[1].set_xlabel("Niveau de gris du 1er pixel")
+        axes[1].set_ylabel("Niveau de gris du 2e pixel")
+
+        plt.tight_layout()
+        plt.savefig(f"histogrammes_image_{i}.png", dpi=200)
+        plt.show()
