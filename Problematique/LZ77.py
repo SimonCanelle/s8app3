@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 # Initialisations
 NomFichierCompresse = "CodageLZ77.bin"
@@ -7,7 +8,10 @@ DimF_Analyse = 1500    # À modifier
 Buffer = np.zeros(DimBuffer, dtype=np.uint8)
 
 # Lecture du fichier de départ
-with open("TexteACompresse.txt", "r") as fichier:
+dossier_script = os.path.dirname(os.path.abspath(__file__))
+chemin_texte = os.path.join(dossier_script, "ressources", "TexteACompresse.txt")
+
+with open(chemin_texte, "r", encoding="utf-8") as fichier:
     Texte = fichier.read().splitlines()
 Texte = "".join(Texte)
 Texte = np.array([ord(caractere) for caractere in Texte], dtype=np.uint8)
@@ -105,5 +109,21 @@ if np.array_equal(TexteDecodee, Texte):
 else:
     print("ERREUR : le texte décompressé diffère du texte original.")
 
-if __name__ == "__main__":
-    print("hello world")
+# Statistiques de compression
+taille_originale_bits = LongueurTexteOriginal * 8
+taille_compressee_octets = TexteCodee.nbytes
+taille_compressee_bits = taille_compressee_octets * 8
+
+debit_bits_par_caractere = taille_compressee_bits / LongueurTexteOriginal
+ratio_compresse = taille_compressee_bits / taille_originale_bits
+economie_pourcent = (1 - ratio_compresse) * 100
+facteur_compression = taille_originale_bits / taille_compressee_bits
+
+print(f"Nombre de caractères encodés : {LongueurTexteOriginal}")
+print(f"Nombre de codes LZ77 : {len(TexteCodee) // 3}")
+print(f"Taille originale : {taille_originale_bits} bits")
+print(f"Taille compressée : {taille_compressee_octets} octets ({taille_compressee_bits} bits)")
+print(f"Débit : {debit_bits_par_caractere:.4f} bits/caractère")
+print(f"Rapport compressé/original : {ratio_compresse:.4f}")
+print(f"Économie : {economie_pourcent:.2f} %")
+print(f"Facteur de compression : {facteur_compression:.4f}")
