@@ -53,6 +53,7 @@ def genereEntete(symboles, occurences):
     for i in range(nSymb):
         binString += format(symboles[i], "08b")# pixel value range 0-255
         binString += format(occurences[i], "016b")#256*256 si tout les pixels ont la même valeur
+    print(f"HUFFMAN Grandeur d'entête {len(binString)} bits")
     return binString
 
 #génère la binary string de l'image encodé
