@@ -61,6 +61,7 @@ def genereEncodage(data, tableCoding):
     binString=""
     for pixel in data:
         binString += tableCoding[str(int(pixel))]
+    print(f"HUFFMAN Grandeur de l'image encodé {len(binString)} bits")
     return binString
 
 
