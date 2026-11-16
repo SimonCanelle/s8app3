@@ -11,7 +11,7 @@ def encode(data):
     comptes = countRepetition(data1d)
     #3. encoder les paires en string binaire
     binstring = encodePairs(comptes)
-    print(f"len bitstring {len(binstring)}")
+    #print(f"len bitstring {len(binstring)}")
     return binstring
 
 #TODO la logique peut clairement être opimisée
